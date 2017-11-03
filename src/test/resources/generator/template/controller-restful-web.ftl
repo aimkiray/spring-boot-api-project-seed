@@ -7,6 +7,7 @@ import ${basePackage}.service.${modelNameUpperCamel}Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -20,6 +21,11 @@ public class ${modelNameUpperCamel}Controller {
     @Resource
     private ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
 
+    @GetMapping("/add")
+    public ModelAndView addPage() {
+        return new ModelAndView("${modelNameLowerCamel}/${modelNameLowerCamel}_add.ftl");
+    }
+
     @PostMapping
     public Result add(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
@@ -32,6 +38,11 @@ public class ${modelNameUpperCamel}Controller {
         return ResultGenerator.successResult();
     }
 
+    @GetMapping("/update")
+    public ModelAndView updatePage() {
+        return new ModelAndView("${modelNameLowerCamel}/${modelNameLowerCamel}_update.ftl");
+    }
+
     @PutMapping
     public Result update(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
@@ -42,6 +53,11 @@ public class ${modelNameUpperCamel}Controller {
     public Result item(@PathVariable Integer id) {
         ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
         return ResultGenerator.successResult(${modelNameLowerCamel});
+    }
+
+    @GetMapping("/list")
+    public ModelAndView listPage() {
+        return new ModelAndView("${modelNameLowerCamel}/${modelNameLowerCamel}_list.ftl");
     }
 
     @GetMapping

@@ -1,0 +1,42 @@
+# Tomcat 配置
+server:
+  port: 12138
+
+# 日志配置
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  # FreeMarker 配置
+  freemarker:
+    # 是否开启模板缓存
+    cache: false
+    # 编码格式
+    charset: UTF-8
+    # 模板的媒体类型设置
+    content-type: text/html
+    # 后缀设置 默认为 .ftl
+    suffix: .ftl
+    # Comma-separated list of template paths.
+    template-loader-path: classpath:/templates/
+    # Name of the RequestContext attribute for all views.
+    request-context-attribute: request
+    check-template-location: true
+    expose-request-attributes: true
+    expose-session-attributes: true
+  # HikariCP 数据源配置
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/gallery
+    username: gallery
+    password: 12138
+    hikari:
+      connection-test-query: SELECT 1 FROM DUAL
+      pool-name: starry
+      minimum-idle: 1
+      max-lifetime: 1765000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上
+      maximum-pool-size: 15 #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+
+# 日志配置
+debug: true
+#trace: true
