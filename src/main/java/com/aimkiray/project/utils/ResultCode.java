@@ -1,4 +1,4 @@
-package com.nekuata.project.utils;
+package com.aimkiray.project.utils;
 
 /**
  * 响应码枚举，参考HTTP状态码的语义

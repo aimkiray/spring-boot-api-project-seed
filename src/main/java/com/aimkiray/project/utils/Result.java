@@ -1,4 +1,4 @@
-package com.nekuata.project.utils;
+package com.aimkiray.project.utils;
 
 import com.alibaba.fastjson.JSON;
 

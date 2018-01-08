@@ -1,4 +1,4 @@
-package com.nekuata.project;
+package com.aimkiray.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

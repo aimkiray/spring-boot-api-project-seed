@@ -1,7 +1,7 @@
-package com.nekuata.project.configurer;
+package com.aimkiray.project.configurer;
 
+import com.aimkiray.project.utils.Constant;
 import com.github.pagehelper.PageHelper;
-import com.nekuata.project.utils.Constant;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
