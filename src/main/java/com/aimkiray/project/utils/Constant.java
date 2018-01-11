@@ -4,7 +4,7 @@ package com.aimkiray.project.utils;
  * 项目常量
  */
 public final class Constant {
-    public static final String BASE_PACKAGE = "com.nekuata.project";//项目基础包名称
+    public static final String BASE_PACKAGE = "com.aimkiray.project";//项目基础包名称
 
     public static final String MODEL_PACKAGE = BASE_PACKAGE + ".model";//Model所在包
     public static final String MAPPER_PACKAGE = BASE_PACKAGE + ".dao";//Mapper所在包
